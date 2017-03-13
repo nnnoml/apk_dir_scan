@@ -1,4 +1,6 @@
 <?php
+phpinfo();
+exit;
 header("Content-type:text/html;charset=utf-8");
 
 $dir = isset($_GET['dir']) ? $_GET['dir'].'/' : '';
@@ -10,7 +12,7 @@ $url = '..'.$upload_dir.$dir;
 $file=scandir($url);
 $new_list = array();
 foreach($file as $key=>$vo){
-    $new_list[$key]['name']=$vo;
+    $new_list[$key]['name']=$dir.$vo;
     $new_list[$key]['is_dir']=pathinfo($vo, PATHINFO_EXTENSION) ? 0 : 1;
     $new_list[$key]['date']=filemtime($url.$vo);
     $new_list[$key]['qrcode'] = '';
