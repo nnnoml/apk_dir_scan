@@ -1,6 +1,4 @@
 <?php
-phpinfo();
-exit;
 header("Content-type:text/html;charset=utf-8");
 
 $dir = isset($_GET['dir']) ? $_GET['dir'].'/' : '';
